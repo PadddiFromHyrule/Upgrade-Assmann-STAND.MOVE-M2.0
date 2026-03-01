@@ -37,6 +37,8 @@ const int relaisRunter = 12;
 const int relaisHoch = 11;
 const int buttonDown = 3;
 const int buttonUp = 2;
+const int buttonDirektDown = 9;
+const int buttonDirektUp = 10;
 bool runter = false;
 bool hoch = false;
 
@@ -56,6 +58,8 @@ void setup() {
   pinMode(relaisHoch, OUTPUT);
   pinMode(buttonDown, INPUT_PULLUP);
   pinMode(buttonUp, INPUT_PULLUP);
+  pinMode(buttonDirektDown, INPUT_PULLUP);
+  pinMode(buttonDirektUp, INPUT_PULLUP);
 }
 
 void loop() {
@@ -84,9 +88,19 @@ void loop() {
     runter = true;
     delay(50);
   }
-    if (digitalRead(buttonUp) == LOW) {
+  if (digitalRead(buttonUp) == LOW) {
     hoch = true;
     delay(50);
+  }
+  if (digitalRead(buttonDirektDown) == LOW) {
+    digitalWrite(relaisRunter, HIGH);
+  } else {
+        digitalWrite(relaisRunter, LOW);
+  }
+    if (digitalRead(buttonDirektUp) == LOW) {
+    digitalWrite(relaisHoch, HIGH);
+  } else {
+        digitalWrite(relaisHoch, LOW);
   }
     if (runter) {
       if (cm > 20) {
