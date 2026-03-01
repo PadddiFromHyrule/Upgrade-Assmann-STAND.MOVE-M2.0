@@ -8,3 +8,31 @@ Arduino Projekt zum Upgrade der Steuerung "[Assmann STAND.MOVE M2.0 ohne Speiche
 * 2x Relais SRD-5VDC-SL-C
 * 2 Taster
 * RJ45-Buchse
+
+## Anschlüsse
+* Abstandssensor HC-SR02
+  * VCC -> 5V
+  * GND -> GND
+  * Trig -> D7
+  * Echo -> D8
+* OLED-Display
+  * VCC -> 5V
+  * GND -> GND
+  * SCL -> A5
+  * SDA -> A4
+* Relais (Tisch hoch)
+  * Jumper auf H
+  * Eingang
+    * DC+ -> 5V
+    * DC- -> GND
+    * INI -> D11
+  * Ausgang
+    * TBD
+* Relais (Tisch runter)
+  * Jumper auf H
+  * Eingang
+    * DC+ -> 5V
+    * DC- -> GND
+    * INI -> D12
+  * Ausgang
+    * TBD
